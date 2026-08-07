@@ -10,7 +10,7 @@ export const initWebsockets = (server: Server) => {
     const allowedOrigins = [
         "http://localhost:5173",
         "http://localhost:8080",
-        "https://echo.abatra.me"
+        "https://echo.abatra.me",
     ];
 
 
@@ -20,7 +20,7 @@ export const initWebsockets = (server: Server) => {
         verifyClient(info, cb) {
 
             if (
-                allowedOrigins.includes(info.origin)
+                allowedOrigins.includes(info.origin) || info.origin.endsWith("localhost:3001")
             ) {
                 cb(true);
             }
