@@ -16,7 +16,7 @@ const allowedOrigins = [
 app.use(cors({
     origin: (origin, callback) => {
 
-        if (!origin || allowedOrigins.includes(origin) || origin.endsWith("localhost:3001")) {
+        if (!origin || allowedOrigins.includes(origin) || origin.endsWith("localhost:3001") || origin.endsWith("abatra.me")) {
             callback(null, true);
         }
         else {
